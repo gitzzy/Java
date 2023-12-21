@@ -33,6 +33,7 @@ public class You {
                 }
             }
             soc.close();
+            scn.close();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -26,7 +26,7 @@ public class Data2 {
             System.out.print("Enter Your Age : ");
             int Age = scn.nextInt();
             scn.nextLine();
-
+scn.close();
             String q1 = "insert into emptb(empID,empName,mail,Age) values(?,?,?,?)";
 
           PreparedStatement pt = con.prepareStatement(q1);

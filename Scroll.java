@@ -1,10 +1,7 @@
-import java.util.jar.Attributes.Name;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
 
 public class Scroll {
     public static void main(String[] args){
