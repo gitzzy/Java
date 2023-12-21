@@ -3,7 +3,6 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.Buffer;
 
 public class Streams {
     public static void main(String[] args)throws IOException{
@@ -24,6 +23,8 @@ public class Streams {
         BufferedInputStream ip1 = new BufferedInputStream(in1);
         byte[] bytess = new byte[1024];
         System.out.println("File Content : "+ip1.read(bytess));
+        op.close();
+        ip1.close();
 
     }
 }
