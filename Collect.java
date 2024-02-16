@@ -16,17 +16,12 @@ public class Collect {
         a1.add("Delhi");
         System.out.println("Size of Array : "+a1.size());
         
-        a2.add("Austin");
         a3.push("New York");
         System.out.println("Stack : "+a3.elementAt(0));
         a4.push("Dubai");
         System.out.println("ArrayDeque : "+a4.poll());
         System.out.println(a4);
-         a5.add("Delhi");
-         a5.add("New York");
-         a5.add("Agra");
-         a5.add("Agra");
-         System.out.println(a5);
+        
 
     }
 }

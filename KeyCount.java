@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -8,7 +8,6 @@ public class KeyCount {
         Scanner scn = new Scanner(System.in);
         System.out.print ("Enter Your Word : ");
         String Word = scn.nextLine();
-        scn.close();
         Stack<Character> wrd = new Stack<>();
         Stack<Integer> num = new Stack<>();
         int count = 0;

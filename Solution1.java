@@ -1,34 +1,26 @@
-import java.util.Stack;
+import java.util.HashSet;
 
-class Solution1 {
-    public String reverseWords(String s) {
+public class Solution1 {
+    public static void main(String[] args) {
         
-        StringBuilder rWord = new StringBuilder();
-        Stack<Character> st = new Stack<>();
-        for(int i=0; i<s.length(); i++){
-        char a = s.charAt(i);
+        int[] arr1 = {3,2,3,2};
+        HashSet<Integer> hs = new HashSet<>();
+        for(int i=0; i<arr1.length; i++){
+            hs.add(arr1[i]);
+        }
+        System.out.println(hs.iterator());
+        System.out.println(Check(arr1));
 
-        if(a != ' '){
-st.push(a);
-        }else{
-            while(st.size() != 0){
-rWord.append(st.pop());
-        }
-        rWord.append(' ');
-        }
-        
-        }
-
-        while(st.size() != 0){
-rWord.append(st.pop());
-        }
-String res1 = rWord.toString();
-return res1;
     }
-    public static void main(String[] args){
+    public static boolean Check(int[] a1){
 
-        Solution1 sol = new Solution1();
-        String res = sol.reverseWords("Hello how are you");
-        System.out.println(res);
+        for(int i=0; i<a1.length; i++){
+            for(int j=i+1; j<a1.length; j++){
+                if(a1[i] == a1[j]){
+return true;
+                }
+            }
+        }
+        return false;
     }
 }

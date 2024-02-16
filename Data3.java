@@ -24,7 +24,7 @@ public class Data3 {
 
             System.out.print("Enter Your City : ");
             String City = scn.nextLine();
-scn.close();
+
             String q1 = "insert into data3 values (?,?,?)";
             PreparedStatement pt = con.prepareStatement(q1);
              pt.setString(1,Name);

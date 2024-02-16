@@ -9,6 +9,7 @@ public class BalancedBrac {
         String Exp =scn.nextLine();
         scn.close();
         Stack<Character> brc = new Stack<>();
+        char c;
 
         for(int i=0; i<Exp.length(); i++){
             char ch = Exp.charAt(i);
@@ -36,9 +37,10 @@ public class BalancedBrac {
         }
 if(brc.isEmpty()){
     System.out.println("Balanced Bracket");
+    System.out.println(brc);
 }else{
     System.out.println("Unbalanced Bracket");
-    
+    System.out.println(brc);
 }
 
     }

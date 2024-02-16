@@ -1,30 +1,36 @@
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Streams {
-    public static void main(String[] args)throws IOException{
+    public static String fileContent;
 
-        BufferedInputStream ip = new BufferedInputStream(System.in);
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Your Data : ");
 
-        byte[] bytes = new byte[1024];
-        ip.read(bytes);
+        String inputData = scanner.nextLine();
+        inputData += "\n";
+        byte[] inputBytes = inputData.getBytes();
 
-        FileOutputStream out = new FileOutputStream("/Users/devanshtyagi/Documents/work/Java#/sample.txt"); 
-        BufferedOutputStream op = new BufferedOutputStream(out);
-        op.write(bytes);
-        op.flush();
-        System.out.println("Data is Successfully Saved.");
+        try (FileInputStream in1 = new FileInputStream("/Users/devanshtyagi/Documents/work/Java#/sample.txt");
+             BufferedInputStream ip1 = new BufferedInputStream(in1)) {
+            byte[] fileBytes = new byte[in1.available()];
+            int bytesRead = ip1.read(fileBytes);
+            fileContent = new String(fileBytes, 0, bytesRead);
 
-        FileInputStream in1 = new FileInputStream("/Users/devanshtyagi/Documents/work/Java#/sample.txt");
-        BufferedInputStream ip1 = new BufferedInputStream(in1);
-        byte[] bytess = new byte[1024];
-        System.out.println("File Content : "+ip1.read(bytess));
-        op.close();
-        ip1.close();
+            System.out.println("File Content : " + fileContent);
+        }
 
+        try (FileOutputStream out = new FileOutputStream("/Users/devanshtyagi/Documents/work/Java#/sample.txt", true);
+             BufferedOutputStream op = new BufferedOutputStream(out)) {
+            op.write(inputBytes);
+            op.flush();
+            System.out.println("Data is Successfully Appended.");
+        }
+        scanner.close();
     }
 }
