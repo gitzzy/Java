@@ -4,11 +4,13 @@ public class Billion {
         long start = System.currentTimeMillis();
         long stop;
         System.out.println("Start");
-         for(int i=0; i<1000000001; i++){
-            if(i==1000000000){
+         for(long i=0; i<2000000001; i++){
+            if(i==2000000000){
                 System.out.println("End");
                 stop = System.currentTimeMillis();
                 System.out.println((float) ((stop-start))+"ms");
+
+                
                 
             }
          }

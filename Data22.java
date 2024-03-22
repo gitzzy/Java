@@ -5,7 +5,7 @@ public class Data22 {
 
         String url = "jdbc:mysql://localhost:3306/javaDB";
         String usr = "root";
-        String pass = "";
+        String pass = "root1234";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
