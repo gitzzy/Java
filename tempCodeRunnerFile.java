@@ -1,5 +1,1 @@
-while(true){
-    //     if(i==3){
-
-    //     }
-    //    }
+ System.out.println(mArr.get(n1)+","+mArr.get(n2));
